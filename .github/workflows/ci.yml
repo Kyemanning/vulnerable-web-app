@@ -39,7 +39,7 @@ jobs:
         # In order to use the Snyk Action you will need to have a Snyk API token.
         # More details in https://github.com/snyk/actions#getting-your-snyk-token
         # or you can signup for free at https://snyk.io/login
-        SNYK_TOKEN: asd
+        SNYK_TOKEN: 9aaab048-d447-4026-a36e-774cc94958b9
       with:
         image: your/image-to-test
         args: --file=Dockerfile
