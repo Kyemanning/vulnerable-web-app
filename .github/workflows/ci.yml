@@ -41,7 +41,7 @@ jobs:
         # or you can signup for free at https://snyk.io/login
         SNYK_TOKEN: ${{secrets.SNYK_SECRET}}
       with:
-        image: your/image-to-test
+        image: vulnapp:$(date +%s)
         args: --file=Dockerfile
 
   
