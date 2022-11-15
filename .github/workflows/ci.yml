@@ -43,10 +43,9 @@ jobs:
       with:
         image: ./vulnapp:$(date +%s)
         args: --file=Dockerfile
-    - uses: actions/checkout@v3
     - name: Docker images
+    - uses: actions/checkout@v3
       run: docker images
-    - name: Run Snyk to check Docker image for vulnerabilities
       
   
   deploy-heroku:
