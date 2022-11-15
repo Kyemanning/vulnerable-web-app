@@ -65,6 +65,7 @@ jobs:
     name: Scan ZAP website
     steps:
       - name: ZAP Scan
+        continue-on-error: true
         uses: zaproxy/action-baseline@v0.3.0
         with:
           target: 'https://tpaciulli-vulnerableapp.herokuapp.com/'
