@@ -29,7 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build a Docker image
-      run: docker build --file Dockerfile --tag vulnapp:$(date +%s) .
+      run: docker build --file Dockerfile --tag vulnapp:$(date) .
     - name: Run Snyk to check Docker image for vulnerabilities
       # Snyk can be used to break the build when it detects vulnerabilities.
       # In this case we want to upload the issues to GitHub Code Scanning
@@ -41,7 +41,7 @@ jobs:
         # or you can signup for free at https://snyk.io/login
         SNYK_TOKEN: ${{secrets.SNYK_SECRET}}
       with:
-        image: PATH/vulnapp:$(date +%s)
+        image: vulnapp:$(date)
         args: --file=Dockerfile
       
   
