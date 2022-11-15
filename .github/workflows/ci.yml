@@ -6,17 +6,18 @@ on:
       - master
 jobs:
   
-  sonarcloud:
+  sonar:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
+          # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
+      - name: Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: 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
+          GITHUB_TOKEN: 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
           SONAR_TOKEN: 86af1a81573615a14bef46b557a1cdc0fc2b9a04
   
   snyk:
