@@ -30,8 +30,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build a Docker image
       run: docker build --file Dockerfile --tag vulnapp:$(date +%s) .
+      #asdasdasd
     - name: Docker image
-    - uses: actions/checkout@v3
+    - uses: addnab/docker-run-action@v3
       run: docker images
     - name: Run Snyk to check Docker image for vulnerabilities
       # Snyk can be used to break the build when it detects vulnerabilities.
