@@ -61,6 +61,7 @@ jobs:
 
   ap_scan:
     runs-on: ubuntu-latest
+    needs: [deploy-heroku]
     name: Scan ZAP website
     steps:
       - name: ZAP Scan
