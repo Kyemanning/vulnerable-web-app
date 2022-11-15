@@ -17,8 +17,8 @@ jobs:
       - name: Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: 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
-          SONAR_TOKEN: 86af1a81573615a14bef46b557a1cdc0fc2b9a04
+          GITHUB_TOKEN: ${{secrets.GIT_SECRET}}
+          SONAR_TOKEN: ${{secrets.SONAR_SECRET}}
   
   snyk:
     permissions:
@@ -39,7 +39,7 @@ jobs:
         # In order to use the Snyk Action you will need to have a Snyk API token.
         # More details in https://github.com/snyk/actions#getting-your-snyk-token
         # or you can signup for free at https://snyk.io/login
-        SNYK_TOKEN: 9aaab048-d447-4026-a36e-774cc94958b9
+        SNYK_TOKEN: ${{secrets.SNYK_SECRET}}
       with:
         image: your/image-to-test
         args: --file=Dockerfile
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: b416c130-33a2-4f3a-aba4-9ebd81848822
+          heroku_api_key: ${{secrets.HEROKU_SECRET}}
           heroku_app_name: "tpaciulli-vulnerableapp" #Must be unique in Heroku
           heroku_email: "paciullitomas@gmail.com"
           remote_branch: "master"
